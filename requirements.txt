@@ -1,3 +1,4 @@
 st-pages
 yfinance
 plotly
+duckdb
