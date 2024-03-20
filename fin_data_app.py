@@ -9,7 +9,7 @@ st.set_page_config( page_title = "TimkaFin", page_icon = "🪙") #layout = "wide
 st.title("Financial dashboard")
 @st.cache_data
 def load_data(file):
-    data = pd.read_excel(file, engine='openpyxl')
+    data = pd.read_excel(file)#, engine='openpyxl'
     return data
 
 uploaded_file = st.sidebar.file_uploader("drag&drop file:")
