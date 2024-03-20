@@ -16,7 +16,7 @@ uploaded_file = st.sidebar.file_uploader("drag&drop file:")
 
 if uploaded_file is None:
     st.warning("🤷‍♂️ file")
-    st.stop()
+    #st.stop()
 
 df = load_data(uploaded_file)
 
