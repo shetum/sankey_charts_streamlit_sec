@@ -1,23 +1,18 @@
 import streamlit as st
 import pandas as pd
-import duckdb
 import plotly.express as px
-
 import plotly.graph_objects as go
 
-st.set_page_config( page_title = "TimkaFin", page_icon = "🪙") #layout = "wide",
+st.set_page_config(page_title="TimkaFin", page_icon="🪙")
 st.title("Financial dashboard")
-@st.cache_data
-def load_data(file):
-    data = pd.read_excel(file, engine='openpyxl')#, engine='openpyxl'
-    return data
 
 uploaded_file_Sankey = st.file_uploader("Sankey data file:")
+
 if uploaded_file_Sankey is None:
     st.warning("🤷‍♂️ file")
     st.stop()
 
-df_sankey = load_data(uploaded_file_Sankey)
+df_sankey = pd.read_excel(uploaded_file_Sankey, engine='openpyxl')
 
 # Создание списков для узлов и связей
 nodes = []
